@@ -1,0 +1,9 @@
+Configure miss: splint
+Configure miss: x86_64-generic-linux-gnu-eu-readelf
+Configure miss: x86_64-generic-linux-gnu-readelf
+Configure miss: sys/event.h usability
+Configure miss: sys/event.h presence
+Configure miss: sys/event.h
+Configure miss: looking for union semun in sys/sem.h
+Configure miss: SO_NOSIGPIPE 
+Configure miss: whether gcc supports "-Wredundent-decls"
