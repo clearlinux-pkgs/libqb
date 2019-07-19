@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xB67157F3A70D4537 (ccaulfie@redhat.com)
 #
 Name     : libqb
-Version  : 1.0.3
-Release  : 1
-URL      : https://github.com/ClusterLabs/libqb/releases/download/v1.0.3/libqb-1.0.3.tar.xz
-Source0  : https://github.com/ClusterLabs/libqb/releases/download/v1.0.3/libqb-1.0.3.tar.xz
-Source99 : https://github.com/ClusterLabs/libqb/releases/download/v1.0.3/libqb-1.0.3.tar.xz.asc
+Version  : 1.0.5
+Release  : 2
+URL      : https://github.com/ClusterLabs/libqb/releases/download/v1.0.5/libqb-1.0.5.tar.xz
+Source0  : https://github.com/ClusterLabs/libqb/releases/download/v1.0.5/libqb-1.0.5.tar.xz
+Source99 : https://github.com/ClusterLabs/libqb/releases/download/v1.0.5/libqb-1.0.5.tar.xz.asc
 Summary  : libqb
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -33,7 +33,6 @@ tracing, inter-process communication (IPC), and polling.
 Summary: bin components for the libqb package.
 Group: Binaries
 Requires: libqb-license = %{version}-%{release}
-Requires: libqb-man = %{version}-%{release}
 
 %description bin
 bin components for the libqb package.
@@ -45,6 +44,7 @@ Group: Development
 Requires: libqb-lib = %{version}-%{release}
 Requires: libqb-bin = %{version}-%{release}
 Provides: libqb-devel = %{version}-%{release}
+Requires: libqb = %{version}-%{release}
 
 %description dev
 dev components for the libqb package.
@@ -85,27 +85,31 @@ man components for the libqb package.
 
 
 %prep
-%setup -q -n libqb-1.0.3
+%setup -q -n libqb-1.0.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1551209203
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1563569556
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 %configure --disable-static
 make  %{?_smp_mflags}
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1551209203
+export SOURCE_DATE_EPOCH=1563569556
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libqb
 cp COPYING %{buildroot}/usr/share/package-licenses/libqb/COPYING
@@ -157,7 +161,7 @@ cp COPYING %{buildroot}/usr/share/package-licenses/libqb/COPYING
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libqb.so.0
-/usr/lib64/libqb.so.0.19.0
+/usr/lib64/libqb.so.0.19.2
 
 %files license
 %defattr(0644,root,root,0755)

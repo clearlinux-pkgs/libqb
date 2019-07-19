@@ -229,6 +229,7 @@ libqb.so.0:qb_util_stopwatch_us_elapsed_get
 libqb.so.0:qb_util_timespec_from_epoch_get
 libqb.so.0:qb_vsnprintf_deserialize
 libqb.so.0:qb_vsnprintf_serialize
+libqb.so.0:remove_tempdir
 libqb.so.0:strlcat
 libqb.so.0:strlcpy
 libqb.so.0:use_filesystem_sockets
