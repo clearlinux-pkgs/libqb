@@ -6,10 +6,10 @@
 #
 Name     : libqb
 Version  : 1.0.5
-Release  : 2
+Release  : 3
 URL      : https://github.com/ClusterLabs/libqb/releases/download/v1.0.5/libqb-1.0.5.tar.xz
 Source0  : https://github.com/ClusterLabs/libqb/releases/download/v1.0.5/libqb-1.0.5.tar.xz
-Source99 : https://github.com/ClusterLabs/libqb/releases/download/v1.0.5/libqb-1.0.5.tar.xz.asc
+Source1  : https://github.com/ClusterLabs/libqb/releases/download/v1.0.5/libqb-1.0.5.tar.xz.asc
 Summary  : libqb
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -86,17 +86,18 @@ man components for the libqb package.
 
 %prep
 %setup -q -n libqb-1.0.5
+cd %{_builddir}/libqb-1.0.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1563569556
+export SOURCE_DATE_EPOCH=1604359829
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 %configure --disable-static
 make  %{?_smp_mflags}
@@ -106,13 +107,13 @@ export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-make VERBOSE=1 V=1 %{?_smp_mflags} check
+make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1563569556
+export SOURCE_DATE_EPOCH=1604359829
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libqb
-cp COPYING %{buildroot}/usr/share/package-licenses/libqb/COPYING
+cp %{_builddir}/libqb-1.0.5/COPYING %{buildroot}/usr/share/package-licenses/libqb/9a647436aa2324c4cb849c6f3d31c392ed50d9bd
 %make_install
 
 %files
@@ -165,7 +166,7 @@ cp COPYING %{buildroot}/usr/share/package-licenses/libqb/COPYING
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/libqb/COPYING
+/usr/share/package-licenses/libqb/9a647436aa2324c4cb849c6f3d31c392ed50d9bd
 
 %files man
 %defattr(0644,root,root,0755)
