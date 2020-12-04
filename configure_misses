@@ -7,3 +7,5 @@ Configure miss: looking for union semun in sys/sem.h
 Configure miss: SO_NOSIGPIPE 
 Configure miss: whether gcc supports "-Wproperty-attribute-mismatch"
 Configure miss: whether gcc supports "-Wredundent-decls"
+Configure miss: BSD date
+Configure miss: source epoch in $SOURCE_EPOCH
