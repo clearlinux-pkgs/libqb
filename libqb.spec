@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x791890532CB5CDDE (users@clusterlabs.org)
 #
 Name     : libqb
-Version  : 2.0.2
-Release  : 5
-URL      : https://github.com/ClusterLabs/libqb/releases/download/v2.0.2/libqb-2.0.2.tar.xz
-Source0  : https://github.com/ClusterLabs/libqb/releases/download/v2.0.2/libqb-2.0.2.tar.xz
-Source1  : https://github.com/ClusterLabs/libqb/releases/download/v2.0.2/libqb-2.0.2.tar.xz.asc
+Version  : 2.0.3
+Release  : 6
+URL      : https://github.com/ClusterLabs/libqb/releases/download/v2.0.3/libqb-2.0.3.tar.xz
+Source0  : https://github.com/ClusterLabs/libqb/releases/download/v2.0.3/libqb-2.0.3.tar.xz
+Source1  : https://github.com/ClusterLabs/libqb/releases/download/v2.0.3/libqb-2.0.3.tar.xz.asc
 Summary  : libqb
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -87,15 +87,15 @@ man components for the libqb package.
 
 
 %prep
-%setup -q -n libqb-2.0.2
-cd %{_builddir}/libqb-2.0.2
+%setup -q -n libqb-2.0.3
+cd %{_builddir}/libqb-2.0.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1607058442
+export SOURCE_DATE_EPOCH=1628613287
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -112,10 +112,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1607058442
+export SOURCE_DATE_EPOCH=1628613287
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libqb
-cp %{_builddir}/libqb-2.0.2/COPYING %{buildroot}/usr/share/package-licenses/libqb/9a647436aa2324c4cb849c6f3d31c392ed50d9bd
+cp %{_builddir}/libqb-2.0.3/COPYING %{buildroot}/usr/share/package-licenses/libqb/9a647436aa2324c4cb849c6f3d31c392ed50d9bd
 %make_install
 
 %files
@@ -351,7 +351,7 @@ cp %{_builddir}/libqb-2.0.2/COPYING %{buildroot}/usr/share/package-licenses/libq
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libqb.so.100
-/usr/lib64/libqb.so.100.1.0
+/usr/lib64/libqb.so.100.2.0
 
 %files license
 %defattr(0644,root,root,0755)

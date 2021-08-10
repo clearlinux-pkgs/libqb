@@ -1,11 +1,11 @@
-Configure miss: x86_64-generic-linux-gnu-eu-readelf
-Configure miss: x86_64-generic-linux-gnu-readelf
-Configure miss: sys/event.h usability
-Configure miss: sys/event.h presence
-Configure miss: sys/event.h
-Configure miss: looking for union semun in sys/sem.h
+Configure miss: BSD date
 Configure miss: SO_NOSIGPIPE 
+Configure miss: looking for union semun in sys/sem.h
+Configure miss: source epoch in $SOURCE_EPOCH
+Configure miss: sys/event.h
+Configure miss: sys/event.h presence
+Configure miss: sys/event.h usability
 Configure miss: whether gcc supports "-Wproperty-attribute-mismatch"
 Configure miss: whether gcc supports "-Wredundent-decls"
-Configure miss: BSD date
-Configure miss: source epoch in $SOURCE_EPOCH
+Configure miss: x86_64-generic-linux-gnu-eu-readelf
+Configure miss: x86_64-generic-linux-gnu-readelf

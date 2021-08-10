@@ -90,6 +90,7 @@ libqb.so.100:qb_log_blackbox_open
 libqb.so.100:qb_log_blackbox_print_from_file
 libqb.so.100:qb_log_blackbox_write_to_file
 libqb.so.100:qb_log_callsite_get
+libqb.so.100:qb_log_callsite_get2
 libqb.so.100:qb_log_callsites_dump
 libqb.so.100:qb_log_callsites_register
 libqb.so.100:qb_log_ctl
@@ -113,6 +114,7 @@ libqb.so.100:qb_log_format_init
 libqb.so.100:qb_log_format_set
 libqb.so.100:qb_log_from_external_source
 libqb.so.100:qb_log_from_external_source_va
+libqb.so.100:qb_log_from_external_source_va2
 libqb.so.100:qb_log_init
 libqb.so.100:qb_log_priority2str
 libqb.so.100:qb_log_real_
