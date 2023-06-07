@@ -1,11 +1,24 @@
 Configure miss: BSD date
+Configure miss: BSD date
 Configure miss: SO_NOSIGPIPE 
+Configure miss: SO_NOSIGPIPE 
+Configure miss: g++ option to enable C++11 features
+Configure miss: g++ option to enable C++11 features
+Configure miss: gcc options needed to detect all undeclared functions
+Configure miss: gcc options needed to detect all undeclared functions
+Configure miss: looking for union semun in sys/sem.h
 Configure miss: looking for union semun in sys/sem.h
 Configure miss: source epoch in $SOURCE_EPOCH
+Configure miss: source epoch in $SOURCE_EPOCH
 Configure miss: sys/event.h
-Configure miss: sys/event.h presence
-Configure miss: sys/event.h usability
+Configure miss: sys/event.h
+Configure miss: whether gcc supports "-Wproperty-attribute-mismatch"
 Configure miss: whether gcc supports "-Wproperty-attribute-mismatch"
 Configure miss: whether gcc supports "-Wredundent-decls"
+Configure miss: whether gcc supports "-Wredundent-decls"
 Configure miss: x86_64-generic-linux-gnu-eu-readelf
+Configure miss: x86_64-generic-linux-gnu-eu-readelf
+Configure miss: x86_64-generic-linux-gnu-file
+Configure miss: x86_64-generic-linux-gnu-file
+Configure miss: x86_64-generic-linux-gnu-readelf
 Configure miss: x86_64-generic-linux-gnu-readelf
