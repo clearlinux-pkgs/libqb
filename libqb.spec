@@ -6,11 +6,11 @@
 # Source0 file verified with key 0x08C81B2C6CE95CA7 (cluster-devel@redhat.com)
 #
 Name     : libqb
-Version  : 2.0.7
-Release  : 9
-URL      : https://github.com/ClusterLabs/libqb/releases/download/v2.0.7/libqb-2.0.7.tar.xz
-Source0  : https://github.com/ClusterLabs/libqb/releases/download/v2.0.7/libqb-2.0.7.tar.xz
-Source1  : https://github.com/ClusterLabs/libqb/releases/download/v2.0.7/libqb-2.0.7.tar.xz.asc
+Version  : 2.0.8
+Release  : 10
+URL      : https://github.com/ClusterLabs/libqb/releases/download/v2.0.8/libqb-2.0.8.tar.xz
+Source0  : https://github.com/ClusterLabs/libqb/releases/download/v2.0.8/libqb-2.0.8.tar.xz
+Source1  : https://github.com/ClusterLabs/libqb/releases/download/v2.0.8/libqb-2.0.8.tar.xz.asc
 Summary  : libqb
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -92,10 +92,10 @@ man components for the libqb package.
 
 
 %prep
-%setup -q -n libqb-2.0.7
-cd %{_builddir}/libqb-2.0.7
+%setup -q -n libqb-2.0.8
+cd %{_builddir}/libqb-2.0.8
 pushd ..
-cp -a libqb-2.0.7 buildavx2
+cp -a libqb-2.0.8 buildavx2
 popd
 
 %build
@@ -103,7 +103,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1686149403
+export SOURCE_DATE_EPOCH=1689951088
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -132,7 +132,7 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1686149403
+export SOURCE_DATE_EPOCH=1689951088
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libqb
 cp %{_builddir}/libqb-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libqb/9a647436aa2324c4cb849c6f3d31c392ed50d9bd || :
@@ -376,9 +376,9 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libqb.so.100.3.1
+/V3/usr/lib64/libqb.so.100.3.2
 /usr/lib64/libqb.so.100
-/usr/lib64/libqb.so.100.3.1
+/usr/lib64/libqb.so.100.3.2
 
 %files license
 %defattr(0644,root,root,0755)
